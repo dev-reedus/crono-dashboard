@@ -1,73 +1,64 @@
-# React + TypeScript + Vite
+<div align="center">
+  <a href="https://crono-dashboard.reedus.dev">
+    <img src="src/assets/logo.svg" alt="Logo" width="100" height="100">
+  </a>
+  <h1 align="center">Crono dashboard</h1>
+  <p align="center">
+    An assignment for a Frontend position
+    <br />
+    <br />
+    <a href="https://crono-dashboard.reedus.dev">View Demo</a>
+  </p>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive dashboard. The assignment was done in 1 day, following a figma given, the dashboard is mainly
+static and the only focus was the interaction of the signals card
 
-Currently, two official plugins are available:
+## 🎯 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Responsive Dashboard
+- Responsive Sidebar
 
-## React Compiler
+## 🚀 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Tailwind CSS
+- TypeScript
+- Package Manager: npm
 
-## Expanding the ESLint configuration
+## 📋 Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (v.22.17.0 or higher)
+- yarn (preferred)
+    - if you don't have it, you can use `npm install -g yarn` to install it globally
+- git (of course)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Installation & Setup
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. `git clone https://github.com/dev-reedus/crono-dashboard.git`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+
+2. `cd crono-dashboard`
+
+
+3. `yarn install`
+
+
+4. `yarn dev`
+
+
+5. open your app at http://localhost:5173
+
+You can also deploy it in a container by running `run.sh` script, it will create a docker image and run it on port 8085.
+
+## 📁 Project Structure
+
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+crono-dashboard/
+├── src/
+│   ├── assets/         # Icons and images
+│   ├── components/     # React components
+│   ├── data/           # Mocked Data
+│   └── pages/          # Dashboard Pages
+└── public/             # Static assets
 ```
