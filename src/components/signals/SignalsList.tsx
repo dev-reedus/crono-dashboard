@@ -1,0 +1,76 @@
+import { useEffect, useState } from 'react'
+import SignalItem from './SignalItem'
+import type { Signal } from '../../data/signals'
+import { fetchSignals } from '../../data/signals'
+
+export default function SignalsList() {
+  const [signals, setSignals] = useState<Signal[]>([])
+  const [loading, setLoading] = useState(true)
+
+  const handleDelete = (id: string) => setSignals(prev => prev.filter(s => s.id !== id))
+  const handleComplete = (id: string) => setSignals(prev => prev.filter(s => s.id !== id))
+
+  const load = async () => {
+    setLoading(true)
+    const data = await fetchSignals()
+    setSignals(data)
+    setLoading(false)
+  }
+
+  useEffect(() => {
+    load()
+  }, [])
+
+  return (
+    <div className="flex flex-col flex-1 min-h-0">
+      {/* Section header */}
+      <div className="flex flex-col justify-between mb-3">
+        <div className="flex items-center gap-2">
+          <h2 className="text-base font-semibold text-gray-900">Signals</h2>
+          {!loading && (
+            <span
+              className="text-xs bg-(--yellow-secondary) text-white font-semibold px-2 py-0.5 rounded-full"
+              style={{
+                backgroundColor: `var(${signals.length > 6 ? '--yellow-secondary' : '--green-main'})`,
+              }}
+            >
+              {signals.length}
+            </span>
+          )}
+        </div>
+        <h3 className="text-(--gray-1) text-sm font-normal">
+          Never miss a single opportunity: check out your top signals from your 1st-degree LinkedIn
+          connections.
+        </h3>
+      </div>
+
+      {/* List */}
+      <div className="divide-y divide-gray-100 overflow-y-auto flex-1 min-h-0">
+        {loading ? (
+          Array.from({ length: 6 }).map((_, i) => (
+            <div key={i} className="h-16 px-4 py-3 animate-pulse bg-white">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gray-100 shrink-0" />
+                <div className="flex-1 space-y-2">
+                  <div className="h-3 bg-gray-100 rounded w-1/3" />
+                  <div className="h-2 bg-gray-100 rounded w-1/4" />
+                </div>
+              </div>
+            </div>
+          ))
+        ) : signals.length === 0 ? (
+          <div className="text-center py-16 text-gray-400 text-sm">No signals found.</div>
+        ) : (
+          signals.map(signal => (
+            <SignalItem
+              key={signal.id}
+              signal={signal}
+              onDelete={handleDelete}
+              onComplete={handleComplete}
+            />
+          ))
+        )}
+      </div>
+    </div>
+  )
+}
