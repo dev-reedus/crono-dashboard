@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import logoWithText from '../assets/logo_with_text.svg'
 import avatarPlaceholder from '../assets/avatar_placeholder.svg'
-import trialBg from '../assets/trial_bg.png'
 import {
   BarChart2,
   ChartNoAxesCombined,
@@ -160,7 +159,6 @@ export default function Sidebar({
           className="mx-2 mb-3 rounded-xl p-2 py-3 flex flex-col gap-2 overflow-hidden whitespace-nowrap relative"
           style={{
             backgroundColor: 'var(--yellow-light)',
-            backgroundImage: `url(${trialBg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -181,11 +179,7 @@ export default function Sidebar({
       <div className="px-0.5 py-3 border-t border-(--gray-4)">
         <div className={`flex items-center gap-3 px-3 py-2 ${collapsed ? 'justify-center' : ''}`}>
           <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0">
-            <img
-              src={avatarPlaceholder}
-              alt="User avatar"
-              className="rounded-full"
-            />
+            <img src={avatarPlaceholder} alt="User avatar" className="rounded-full" />
           </div>
           {!collapsed && (
             <div className="min-w-0 flex-1 flex flex-col text-sm truncate">
