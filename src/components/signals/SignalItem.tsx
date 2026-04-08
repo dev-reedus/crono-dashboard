@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { CheckCircle, Trash2 } from 'lucide-react'
+import amazonImg from '../../assets/amazon.png'
 import type { Signal, SignalType } from '../../data/signals'
 
 const TYPE_LABELS: Record<SignalType, { label: string; color: string }> = {
@@ -101,7 +102,7 @@ export default function SignalItem({
     <div className="relative flex items-center gap-2 md:gap-5 px-0.5 py-4.5 md:px-4 bg-white hover:bg-gray-50 transition-colors">
       <div className="relative shrink-0">
         <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-          <img className="rounded-full" src="/src/assets/amazon.png" alt={`brand icon`} />
+          <img className="rounded-full" src={amazonImg} alt={`brand icon`} />
         </div>
         <span
           className="absolute -top-0.5 -left-0.5 w-3 h-3 rounded-full border-2 border-white"

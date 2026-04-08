@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import logoWithText from '../assets/logo_with_text.svg'
+import avatarPlaceholder from '../assets/avatar_placeholder.svg'
+import trialBg from '../assets/trial_bg.png'
 import {
   BarChart2,
   ChartNoAxesCombined,
@@ -61,7 +64,7 @@ export default function Sidebar({
       <div
         className={`py-5 flex items-center border-b border-(--gray-4) ${collapsed ? 'justify-center px-3' : 'justify-between px-3'}`}
       >
-        {!collapsed && <img src="src/assets/logo_with_text.svg" alt="Logo" className="w-32 h-8" />}
+        {!collapsed && <img src={logoWithText} alt="Logo" className="w-32 h-8" />}
         {/* Mobile: close sidebar */}
         <button
           onClick={onClose}
@@ -155,7 +158,12 @@ export default function Sidebar({
       {!collapsed && (
         <div
           className="mx-2 mb-3 rounded-xl p-2 py-3 flex flex-col gap-2 overflow-hidden whitespace-nowrap relative"
-          style={{ backgroundColor: 'var(--yellow-light)' }}
+          style={{
+            backgroundColor: 'var(--yellow-light)',
+            backgroundImage: `url(${trialBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
         >
           <p className="relative text-(--main-dark) text-sm  font-semibold leading-tight">
             Trial ends in 2 days
@@ -174,7 +182,7 @@ export default function Sidebar({
         <div className={`flex items-center gap-3 px-3 py-2 ${collapsed ? 'justify-center' : ''}`}>
           <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0">
             <img
-              src="src/assets/avatar_placeholder.svg"
+              src={avatarPlaceholder}
               alt="User avatar"
               className="rounded-full"
             />

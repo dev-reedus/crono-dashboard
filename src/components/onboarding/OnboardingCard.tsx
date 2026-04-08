@@ -1,9 +1,15 @@
+import extensionImg from '../../assets/extension.svg'
+import newContractsImg from '../../assets/new_contracts.svg'
+import targetGoalImg from '../../assets/target_goal.svg'
+import toStrategyImg from '../../assets/to_strategy.svg'
+import taskImg from '../../assets/task.svg'
+
 const ONBOARDING_STEPS = [
-  { icon: 'src/assets/extension.svg', label: 'Integrations Setup', duration: 5 },
-  { icon: 'src/assets/new_contracts.svg', label: 'Add new Contract', duration: 5 },
-  { icon: 'src/assets/target_goal.svg', label: 'Create your first sequence', duration: 10 },
-  { icon: 'src/assets/to_strategy.svg', label: 'Add contracts to sequence', duration: 5 },
-  { icon: 'src/assets/task.svg', label: 'Run your first task', duration: 10 },
+  { icon: extensionImg, label: 'Integrations Setup', duration: 5 },
+  { icon: newContractsImg, label: 'Add new Contract', duration: 5 },
+  { icon: targetGoalImg, label: 'Create your first sequence', duration: 10 },
+  { icon: toStrategyImg, label: 'Add contracts to sequence', duration: 5 },
+  { icon: taskImg, label: 'Run your first task', duration: 10 },
 ]
 
 export default function OnboardingCard() {

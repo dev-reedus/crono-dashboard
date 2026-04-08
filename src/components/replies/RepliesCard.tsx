@@ -1,10 +1,14 @@
 import { ChevronRight, MailboxIcon } from 'lucide-react'
+import redditImg from '../../assets/reddit.png'
+import amazonImg from '../../assets/amazon.png'
+import mcImg from '../../assets/mc.png'
+import mediumImg from '../../assets/medium.png'
 
 const REPLY_AVATARS = [
-  { src: 'src/assets/reddit.png', alt: 'Reddit' },
-  { src: 'src/assets/amazon.png', alt: 'Amazon' },
-  { src: 'src/assets/mc.png', alt: "McDonald's" },
-  { src: 'src/assets/medium.png', alt: 'Medium' },
+  { src: redditImg, alt: 'Reddit' },
+  { src: amazonImg, alt: 'Amazon' },
+  { src: mcImg, alt: "McDonald's" },
+  { src: mediumImg, alt: 'Medium' },
 ]
 
 export default function RepliesCard() {

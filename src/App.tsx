@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Menu } from 'lucide-react'
+import logoWithText from './assets/logo_with_text.svg'
 import Sidebar from './components/Sidebar'
 import Dashboard from './pages/Dashboard.tsx'
 
@@ -41,7 +42,7 @@ export default function App() {
             <Menu size={20} />
           </button>
           <div className="flex items-center gap-2">
-            <img src="src/assets/logo_with_text.svg" alt="Logo" className="w-32 h-8" />
+            <img src={logoWithText} alt="Logo" className="w-32 h-8" />
           </div>
         </div>
 
