@@ -22,30 +22,30 @@ export default function SignalsList() {
   }, [])
 
   return (
-    <div className="flex flex-col flex-1 min-h-0">
+    <div className="flex flex-col gap-3 flex-1 min-h-0">
       {/* Section header */}
-      <div className="flex flex-col justify-between mb-3">
+      <div className=" p-3.75 pb-0 flex flex-col gap-1 justify-between">
         <div className="flex items-center gap-2">
-          <h2 className="text-base font-semibold text-gray-900">Signals</h2>
+          <h2 className="text-sm leading-6 font-semibold text-(--main-dark)">Signals</h2>
           {!loading && (
             <span
-              className="text-xs bg-(--yellow-secondary) text-white font-semibold px-2 py-0.5 rounded-full"
+              className="text-xs bg-(--yellow-secondary) text-white font-semibold px-2 py-1 rounded-xl"
               style={{
                 backgroundColor: `var(${signals.length > 6 ? '--yellow-secondary' : '--green-main'})`,
               }}
             >
-              {signals.length}
+              {signals.length + 1}
             </span>
           )}
         </div>
-        <h3 className="text-(--gray-1) text-sm font-normal">
+        <h3 className="text-(--gray-1) leading-6 text-sm font-normal">
           Never miss a single opportunity: check out your top signals from your 1st-degree LinkedIn
           connections.
         </h3>
       </div>
 
       {/* List */}
-      <div className="divide-y divide-gray-100 overflow-y-auto flex-1 min-h-0">
+      <div className="divide-y divide-(--gray-4) overflow-y-auto flex-1 min-h-0">
         {loading ? (
           Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="h-16 px-4 py-3 animate-pulse bg-white">
@@ -59,7 +59,7 @@ export default function SignalsList() {
             </div>
           ))
         ) : signals.length === 0 ? (
-          <div className="text-center py-16 text-gray-400 text-sm">No signals found.</div>
+          <div className="text-center py-16 text-(--gray-4) text-sm">No signals found.</div>
         ) : (
           signals.map(signal => (
             <SignalItem

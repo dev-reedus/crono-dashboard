@@ -9,7 +9,7 @@ export default function App() {
   const [collapsed, setCollapsed] = useState(false)
 
   return (
-    <div className="flex h-screen overflow-hidden bg-gray-50">
+    <div className="flex h-screen overflow-hidden bg-(--gray-7)">
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div
@@ -22,7 +22,7 @@ export default function App() {
       <div
         className={`fixed inset-y-0 left-0 z-30 transition-all duration-300 md:relative md:translate-x-0 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } ${collapsed ? 'md:w-16' : 'md:w-52'}`}
+        } ${collapsed ? 'md:w-16' : 'md:w-48'}`}
       >
         <Sidebar
           collapsed={collapsed}
@@ -46,7 +46,7 @@ export default function App() {
           </div>
         </div>
 
-        <div className="p-4 md:p-6 space-y-6 h-full">
+        <div className="p-4 space-y-6 h-full">
           <Dashboard />
         </div>
       </main>

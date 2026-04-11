@@ -13,20 +13,20 @@ const REPLY_AVATARS = [
 
 export default function RepliesCard() {
   return (
-    <div className="bg-white rounded-2xl p-4 flex flex-col gap-1 shadow-sm border border-(--gray-4)">
+    <div className="bg-white rounded-2xl p-3.75 flex flex-col gap-2 border border-(--gray-4)">
       <div className="flex items-center justify-between">
-        <p className="text-sm font-semibold leading-6 text-(--main-dark) tracking-wide">Replies</p>
-        <a href="#" className="text-sm text-(--main-color-dark)">
+        <p className="text-sm font-semibold leading-5.5 text-(--main-dark)">Replies</p>
+        <a href="#" className="text-sm leading-4.5 text-(--main-color-dark)">
           <span>Open inbox</span>
-          <ChevronRight size={18} className="inline-block ml-1" />
+          <ChevronRight size={16} className="leading-4.5 inline-block ml-1.25" />
         </a>
       </div>
-      <div className="bg-(--main-light) flex flex-row items-center justify-between rounded-2xl p-4 text-(--main-dark)">
+      <div className="bg-(--main-light) flex flex-row items-center justify-between rounded-2xl p-4 pr-6 text-(--main-dark)">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 bg-(--main-hover) rounded-3xl flex items-center justify-center">
-            <MailboxIcon size={24} className="text-(--main-color)" />
+            <MailboxIcon size={24} className="text-(--main-color-dark)" />
           </div>
-          <p className="text-4xl font-semibold leading-11 text-(--gray-hover)">24</p>
+          <p className="text-4xl font-medium leading-11 text-(--gray-hover)">24</p>
         </div>
         <div className="flex flex-row">
           {REPLY_AVATARS.map(({ src, alt }, i) => (
@@ -34,7 +34,7 @@ export default function RepliesCard() {
               key={i}
               src={src}
               alt={alt}
-              className="w-8 h-8 rounded-full border-2 border-(--gray-5) object-contain bg-white -ml-2 first:ml-0"
+              className="w-8 h-8 rounded-full border border-(--gray-5) object-contain bg-white -ml-2 first:ml-0"
             />
           ))}
         </div>
