@@ -3,46 +3,43 @@
 @tailwind utilities;
 
 @theme {
-    --main-color: #07C8C0;
-    --main-crono: #1EBAB2;
-    --main-color-dark: #0A9B94;
-    --main-hover: #CEEDED;
-    --main-light: #E9F8F8;
-    --gray-1: #7A8395;
-    --gray-2: #AFB5BF;
-    --gray-4: #E6E9F2;
-    --gray-5: #D5E0F0;
-    --gray-6: #EAF1FB;
-    --gray-7: #F5F7F9;
-    --gray-hover: #3E485B;
-    --main-dark: #010E27;
-    --yellow-light: #FEF3D2
-}
-
-:root {
-    --red-main: #ED4C5E;
-    --dark-yellow-main: #C69812;
-    --green-main: #1A9D6E;
-    --blue-hover: #3B85E8;
-    --blue-main: #3B58DB;
-    --purple-main: #8846DC;
-    --yellow-main: #E2AD13;
-    --pink-main: #E769CB;
-    --yellow-secondary: #F9BB06;
-    --dark-yellow-main-light: #FEF3D2;
-    --yellow-main-light: #FEF3D2;
-    --red-main-light: #FFE9E9;
-    --blue-hover-light: #EAF1FB;
-    --green-main-light: #E8F5D9;
-    --blue-main-light: #EAF1FB;
-    --purple-main-light: #F2EAFF;
-    --pink-main-light: #FDE5F8;
+    --color-main: #07C8C0;
+    --color-main-crono: #1EBAB2;
+    --color-main-dark-teal: #0A9B94;
+    --color-main-hover: #CEEDED;
+    --color-main-light: #E9F8F8;
+    --color-gray-1: #7A8395;
+    --color-gray-2: #AFB5BF;
+    --color-gray-4: #E6E9F2;
+    --color-gray-5: #D5E0F0;
+    --color-gray-6: #EAF1FB;
+    --color-gray-7: #F5F7F9;
+    --color-gray-hover: #3E485B;
+    --color-main-dark: #010E27;
+    --color-yellow-light: #FEF3D2;
+    --color-red-main: #ED4C5E;
+    --color-dark-yellow-main: #C69812;
+    --color-green-main: #1A9D6E;
+    --color-blue-hover: #3B85E8;
+    --color-blue-main: #3B58DB;
+    --color-purple-main: #8846DC;
+    --color-yellow-main: #E2AD13;
+    --color-pink-main: #E769CB;
+    --color-yellow-secondary: #F9BB06;
+    --color-dark-yellow-main-light: #FEF3D2;
+    --color-yellow-main-light: #FEF3D2;
+    --color-red-main-light: #FFE9E9;
+    --color-blue-hover-light: #EAF1FB;
+    --color-green-main-light: #E8F5D9;
+    --color-blue-main-light: #EAF1FB;
+    --color-purple-main-light: #F2EAFF;
+    --color-pink-main-light: #FDE5F8;
 }
 
 @layer base {
     * {
         scrollbar-width: thin;
-        scrollbar-color: theme(--gray-4) theme(--gray-6);
+        scrollbar-color: theme(--color-gray-4) theme(--color-gray-6);
     }
 
     @supports not (scrollbar-color: auto) {

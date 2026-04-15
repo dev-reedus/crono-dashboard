@@ -1,50 +1,39 @@
-import { useEffect, useState } from 'react'
 import SignalItem from './SignalItem'
-import { fetchSignals, type Signal } from '../../../../data/signals'
+import type { Signal } from '@/data/signals'
 
-export default function SignalsList() {
-  const [signals, setSignals] = useState<Signal[]>([])
-  const [loading, setLoading] = useState(true)
+type Props = {
+  signals: Signal[]
+  loading: boolean
+  onDelete: (id: string) => void
+  onComplete: (id: string) => void
+}
 
-  const handleDelete = (id: string) => setSignals(prev => prev.filter(s => s.id !== id))
-  const handleComplete = (id: string) => setSignals(prev => prev.filter(s => s.id !== id))
-
-  const load = async () => {
-    setLoading(true)
-    const data = await fetchSignals()
-    setSignals(data)
-    setLoading(false)
-  }
-
-  useEffect(() => {
-    load()
-  }, [])
-
+export default function SignalsList({ signals, loading, onDelete, onComplete }: Props) {
   return (
     <div className="flex flex-col gap-3 flex-1 min-h-0">
       {/* Section header */}
       <div className=" p-3.75 pb-0 flex flex-col gap-1 justify-between">
         <div className="flex items-center gap-2">
-          <h2 className="text-sm leading-6 font-semibold text-(--main-dark)">Signals</h2>
+          <h2 className="text-sm leading-6 font-semibold text-main-dark">Signals</h2>
           {!loading && (
             <span
-              className="text-xs bg-(--yellow-secondary) text-white font-semibold px-2 py-1 rounded-xl"
+              className="text-xs text-white font-semibold px-2 py-1 rounded-xl"
               style={{
-                backgroundColor: `var(${signals.length > 6 ? '--yellow-secondary' : '--green-main'})`,
+                backgroundColor: `var(${signals.length > 6 ? '--color-yellow-secondary' : '--color-green-main'})`,
               }}
             >
               {signals.length}
             </span>
           )}
         </div>
-        <h3 className="text-(--gray-1) leading-6 text-sm font-normal">
+        <h3 className="text-gray-1 leading-6 text-sm font-normal">
           Never miss a single opportunity: check out your top signals from your 1st-degree LinkedIn
           connections.
         </h3>
       </div>
 
       {/* List */}
-      <div className="divide-y divide-(--gray-4) overflow-y-auto flex-1 min-h-0">
+      <div className="divide-y divide-gray-4 overflow-y-auto flex-1 min-h-0">
         {loading ? (
           Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="h-16 px-4 py-3 animate-pulse bg-white">
@@ -58,14 +47,14 @@ export default function SignalsList() {
             </div>
           ))
         ) : signals.length === 0 ? (
-          <div className="text-center py-16 text-(--gray-4) text-sm">No signals found.</div>
+          <div className="text-center py-16 text-gray-4 text-sm">No signals found.</div>
         ) : (
           signals.map(signal => (
             <SignalItem
               key={signal.id}
               signal={signal}
-              onDelete={handleDelete}
-              onComplete={handleComplete}
+              onDelete={onDelete}
+              onComplete={onComplete}
             />
           ))
         )}

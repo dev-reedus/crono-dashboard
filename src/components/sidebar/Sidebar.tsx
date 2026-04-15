@@ -57,7 +57,7 @@ export default function Sidebar({
 
   return (
     <aside
-      className={`shrink-0 bg-white flex flex-col h-screen border-r gap-2 border-(--gray-4) transition-all duration-300 ${collapsed ? 'w-16' : 'w-48'}`}
+      className={`shrink-0 bg-white flex flex-col h-screen border-r gap-2 border-gray-4 transition-all duration-300 ${collapsed ? 'w-16' : 'w-48'}`}
     >
       {/* Logo */}
       <div
@@ -67,14 +67,14 @@ export default function Sidebar({
         {/* Mobile: close sidebar */}
         <button
           onClick={onClose}
-          className="md:hidden flex w-6 h-6 rounded-full bg-(--gray-7) items-center justify-center text-(--gray-1) transition-colors shrink-0 cursor-pointer"
+          className="md:hidden flex w-6 h-6 rounded-full bg-gray-7 items-center justify-center text-gray-1 transition-colors shrink-0 cursor-pointer"
         >
           <ChevronsLeft size={16} />
         </button>
         {/* Desktop: collapse/expand */}
         <button
           onClick={onToggleCollapse}
-          className="hidden md:flex w-6 h-6 rounded-full bg-(--gray-7) items-center justify-center text-(--gray-1) transition-colors shrink-0 cursor-pointer"
+          className="hidden md:flex w-6 h-6 rounded-full bg-gray-7 items-center justify-center text-gray-1 transition-colors shrink-0 cursor-pointer"
         >
           {collapsed ? <ChevronsRight size={16} /> : <ChevronsLeft size={16} />}
         </button>
@@ -91,20 +91,17 @@ export default function Sidebar({
                 collapsed ? 'justify-center' : ''
               } ${
                 active
-                  ? 'text-(--main-color-dark) font-medium'
-                  : 'text-(--gray-1) hover:text-(--main-color)'
+                  ? 'text-main-dark-teal font-medium'
+                  : 'text-gray-1 hover:text-main'
               }`}
             >
               {active && (
-                <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0.75 h-full rounded-br-md rounded-tr-md bg-(--main-color-dark)" />
+                <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0.75 h-full rounded-br-md rounded-tr-md bg-main-dark-teal" />
               )}
               <div className="relative">
                 <Icon size={24} />
                 {badge && collapsed && (
-                  <span
-                    className="absolute -top-0.5 -left-0.5 w-3 h-3 rounded-full border-2 border-white"
-                    style={{ backgroundColor: 'var(--yellow-secondary)' }}
-                  />
+                  <span className="absolute -top-0.5 -left-0.5 w-3 h-3 rounded-full border-2 border-white bg-yellow-secondary" />
                 )}
               </div>
               <span
@@ -114,9 +111,9 @@ export default function Sidebar({
               </span>
               {badge && !collapsed && (
                 <span
-                  className="text-xs ml-auto bg-(--yellow-secondary) text-white font-medium px-2 py-0.5 rounded-full"
+                  className="text-xs ml-auto text-white font-medium px-2 py-0.5 rounded-full"
                   style={{
-                    backgroundColor: `var(${badge > 6 ? '--yellow-secondary' : '--green-main'})`,
+                    backgroundColor: `var(${badge > 6 ? '--color-yellow-secondary' : '--color-green-main'})`,
                   }}
                 >
                   {badge}
@@ -139,7 +136,7 @@ export default function Sidebar({
                     {submenu.map(({ icon: SubIcon, label: subLabel }) => (
                       <button
                         key={subLabel}
-                        className="w-full flex items-center gap-3 pl-10 pr-4 py-1 text-sm text-(--gray-1) hover:text-(--main-color) transition-colors cursor-pointer"
+                        className="w-full flex items-center gap-3 pl-10 pr-4 py-1 text-sm text-gray-1 hover:text-main transition-colors cursor-pointer"
                       >
                         <SubIcon size={18} />
                         <span className="whitespace-nowrap overflow-hidden">{subLabel}</span>
@@ -155,34 +152,26 @@ export default function Sidebar({
 
       {/* Trial badge */}
       {!collapsed && (
-        <div
-          className="rounded-xl m-2 mb-0 p-2 flex flex-col gap-2 overflow-hidden whitespace-nowrap relative"
-          style={{
-            backgroundColor: 'var(--yellow-light)',
-          }}
-        >
-          <p className="relative text-(--main-dark) text-sm font-medium leading-4.5">
+        <div className="rounded-xl m-2 mb-0 p-2 flex flex-col gap-2 overflow-hidden whitespace-nowrap relative bg-yellow-light">
+          <p className="relative text-main-dark text-sm font-medium leading-4.5">
             Trial ends in 2 days
           </p>
-          <button
-            className="relative max-w-29 rounded-md py-1 px-2 font-medium text-xs cursor-pointer!"
-            style={{ backgroundColor: 'var(--yellow-secondary)', color: 'white' }}
-          >
+          <button className="relative max-w-29 rounded-md py-1 px-2 font-medium text-xs cursor-pointer! bg-yellow-secondary text-white">
             Upgrade plan <GiftIcon size={12} className="inline-block ml-0.5" />
           </button>
         </div>
       )}
 
       {/* Bottom */}
-      <div className="mt-auto pb-3 pt-2 border-t border-(--gray-4)">
+      <div className="mt-auto pb-3 pt-2 border-t border-gray-4">
         <div className={`flex items-center gap-2 px-3 py-1 ${collapsed ? 'justify-center' : ''}`}>
           <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0">
             <img src={avatarPlaceholder} alt="User avatar" className="rounded-full" />
           </div>
           {!collapsed && (
             <div className="min-w-0 flex-1 gap-x-2 flex flex-col text-sm truncate">
-              <p className=" leading-6 text-(--main-dark)">William Robertson</p>
-              <p className="text-(--gray-1)">Sales</p>
+              <p className=" leading-6 text-main-dark">William Robertson</p>
+              <p className="text-gray-1">Sales</p>
             </div>
           )}
         </div>
