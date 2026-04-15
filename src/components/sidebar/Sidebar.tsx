@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import logoWithText from '../assets/logo_with_text.svg'
-import avatarPlaceholder from '../assets/avatar_placeholder.svg'
+import logoWithText from '@/assets/logo_with_text.svg'
+import avatarPlaceholder from '@/assets/avatar_placeholder.svg'
 import {
   BarChart2,
   ChartNoAxesCombined,

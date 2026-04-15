@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import SignalItem from './SignalItem'
-import type { Signal } from '../../data/signals'
-import { fetchSignals } from '../../data/signals'
+import { fetchSignals, type Signal } from '../../../../data/signals'
 
 export default function SignalsList() {
   const [signals, setSignals] = useState<Signal[]>([])

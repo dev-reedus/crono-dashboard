@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Menu } from 'lucide-react'
 import logoWithText from './assets/logo_with_text.svg'
-import Sidebar from './components/Sidebar'
-import Dashboard from './pages/Dashboard.tsx'
+import Sidebar from './components/sidebar/Sidebar'
+import Dashboard from './pages/dashboard/Dashboard.tsx'
 
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)

@@ -1,9 +1,9 @@
-import KpiCard from '../components/kpi/KpiCard'
-import OnboardingCard from '../components/onboarding/OnboardingCard'
-import RepliesCard from '../components/replies/RepliesCard'
-import SignalsList from '../components/signals/SignalsList'
-import TodaysTasks from '../components/tasks/TodaysTasks'
-import WelcomeCard from '../components/welcome/WelcomeCard'
+import KpiCard from './components/kpi/KpiCard'
+import OnboardingCard from './components/onboarding/OnboardingCard'
+import RepliesCard from './components/replies/RepliesCard'
+import SignalsList from './components/signals/SignalsList'
+import TodaysTasks from './components/tasks/TodaysTasks'
+import WelcomeCard from './components/welcome/WelcomeCard'
 
 export default function Dashboard() {
   return (
