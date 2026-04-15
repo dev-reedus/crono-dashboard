@@ -34,7 +34,7 @@ export default function SignalsList() {
                 backgroundColor: `var(${signals.length > 6 ? '--yellow-secondary' : '--green-main'})`,
               }}
             >
-              {signals.length + 1}
+              {signals.length}
             </span>
           )}
         </div>
